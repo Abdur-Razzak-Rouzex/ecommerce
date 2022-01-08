@@ -7,6 +7,7 @@ async function connect() {
     console.log('already connected');
     return;
   }
+
   if (mongoose.connections.length > 0) {
     connection.isConnected = mongoose.connections[0].readyState;
     if (connection.isConnected === 1) {
@@ -20,6 +21,7 @@ async function connect() {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
+
   console.log('new connection');
   connection.isConnected = db.connections[0].readyState;
 }
