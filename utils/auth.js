@@ -15,6 +15,7 @@ const signToken = (user) => {
     }
   );
 };
+
 const isAuth = async (req, res, next) => {
   const { authorization } = req.headers;
   if (authorization) {
@@ -29,9 +30,10 @@ const isAuth = async (req, res, next) => {
       }
     });
   } else {
-    res.status(401).send({ message: 'Token is not suppiled' });
+    res.status(401).send({ message: 'Token is not supplied' });
   }
 };
+
 const isAdmin = async (req, res, next) => {
   if (req.user.isAdmin) {
     next();

@@ -24,6 +24,7 @@ export default function Login() {
         control,
         formState: {errors},
     } = useForm();
+
     const {enqueueSnackbar, closeSnackbar} = useSnackbar();
     const router = useRouter();
     const {redirect} = router.query; // login?redirect=/shipping
@@ -82,9 +83,9 @@ export default function Login() {
                                             : ''
                                     }
                                     {...field}
-                                ></TextField>
+                                />
                             )}
-                        ></Controller>
+                        />
                     </ListItem>
                     <ListItem>
                         <Controller
@@ -111,9 +112,9 @@ export default function Login() {
                                             : ''
                                     }
                                     {...field}
-                                ></TextField>
+                                />
                             )}
-                        ></Controller>
+                        />
                     </ListItem>
                     <ListItem>
                         <Button variant="contained" type="submit" fullWidth color="primary">

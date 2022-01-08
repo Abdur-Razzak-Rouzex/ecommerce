@@ -104,16 +104,19 @@ export default function Layout({title, description, children}) {
         const newDarkMode = !darkMode;
         Cookies.set('darkMode', newDarkMode ? 'ON' : 'OFF');
     };
+
     const [anchorEl, setAnchorEl] = useState(null);
     const loginClickHandler = (e) => {
         setAnchorEl(e.currentTarget);
     };
+
     const loginMenuCloseHandler = (e, redirect) => {
         setAnchorEl(null);
         if (redirect) {
             router.push(redirect);
         }
     };
+
     const logoutClickHandler = () => {
         setAnchorEl(null);
         dispatch({type: 'USER_LOGOUT'});
@@ -123,6 +126,7 @@ export default function Layout({title, description, children}) {
         Cookies.remove('paymentMethod');
         router.push('/');
     };
+
     return (
         <div>
             <Head>
