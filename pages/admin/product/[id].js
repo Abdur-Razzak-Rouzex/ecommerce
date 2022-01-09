@@ -22,7 +22,6 @@ import Layout from '../../../components/Layout';
 import useStyles from '../../../utils/styles';
 import {Controller, useForm} from 'react-hook-form';
 import {useSnackbar} from 'notistack';
-import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 
 function reducer(state, action) {
     switch (action.type) {
@@ -70,6 +69,7 @@ function ProductEdit({params}) {
         formState: {errors},
         setValue,
     } = useForm();
+
     const {enqueueSnackbar, closeSnackbar} = useSnackbar();
     const router = useRouter();
     const classes = useStyles();
