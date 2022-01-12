@@ -159,7 +159,7 @@ function ProductEdit({params}) {
             );
             dispatch({type: 'UPDATE_SUCCESS'});
             enqueueSnackbar('Product updated successfully', {variant: 'success'});
-            router.push('/admin/products');
+            await router.push('/admin/products');
         } catch (err) {
             dispatch({type: 'UPDATE_FAIL', payload: getError(err)});
             enqueueSnackbar(getError(err), {variant: 'error'});
